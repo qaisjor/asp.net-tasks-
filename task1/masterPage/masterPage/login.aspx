@@ -8,7 +8,8 @@
                     <div class="mb-3">
                         <label for="Email" class="form-label">Email address</label>
                         <asp:TextBox ID="Email" CssClass="form-control bg-info bg-opacity-10 border border-primary" 
-                            runat="server"></asp:TextBox>
+                            runat="server" ></asp:TextBox>
+                        <%--<input id="Reset1" type="reset" value="reset" />--%>
                        <asp:RequiredFieldValidator ID="RequiredFieldValidator2" runat="server" ControlToValidate="Email" ErrorMessage="requied field"
                             ValidationGroup="login"></asp:RequiredFieldValidator> 
                         <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ControlToValidate="Email" ValidationExpression="\w+([-+.']\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*"
@@ -25,8 +26,8 @@
                     
                     <p class="small"><a class="text-primary" href="forget-password.html">Forgot password?</a></p>
                     <div class="d-grid">
-                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Button" ValidationGroup="login"/>
-                        
+                        <asp:Button ID="Button1" CssClass="btn btn-primary" runat="server" Text="Button" ValidationGroup="login" OnClick="Button1_Click"/>
+                        <button id="clear" onclick="clear()">clear</button>
                     </div>
                 <div class="mt-3">
                     <p class="mb-0  text-center">Don't have an account? <a href="signup.aspx"
@@ -73,7 +74,7 @@
                     
                     <p class="small"><a class="text-primary" href="forget-password.html">Forgot password?</a></p>
                     <div class="d-grid">
-                        <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="Button" ValidationGroup="signup"/>
+                        <asp:Button ID="Button2" CssClass="btn btn-primary" runat="server" Text="Button" ValidationGroup="signup" OnClientClick="check()" OnClick="Button2_Click"/>
                         
                     </div>
                 <div class="mt-3">
@@ -83,4 +84,6 @@
                 </div>
             </div>
         </div>
+
+    
 </asp:Content>

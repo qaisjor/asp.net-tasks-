@@ -13,5 +13,19 @@ namespace masterPage
         {
 
         }
+
+        protected void Button1_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert",
+                "swal('Good job!', 'You clicked Success button!', 'success')", true);
+        }
+
+        protected void Button2_Click(object sender, EventArgs e)
+        {
+            ClientScript.RegisterClientScriptBlock(this.GetType(), "alert",
+                 "swal('Information!', 'You clicked Info button!', 'info')", true);
+
+            
+        }
     }
 }
